@@ -1,11 +1,12 @@
 <h1>New Entry</h1>
 <br>
 <div class="new-location-form">
-<%= form_tag("/search", method: "get") do %>
+<%= form_tag("/search", method: "get", remote: true) do %>
   <%= label_tag(:q, "Search for:") %>
   <%= text_field_tag :q, "", class: 'picture-data' %>
   <div class="submit-button"><%= submit_tag("Search")%></div>
 <% end %>
-<% p @images %>
+<div class="picture-data"></div>
 <%= render partial: 'image', collection: @images %>
+
 </div>

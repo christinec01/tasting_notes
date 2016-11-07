@@ -15,6 +15,7 @@
 
 $(document).on("ajax:success", function(e, data, status, xhr){
   console.log(data);
+
   // var imageURLs = (data.images.map(function(image) {
   //   return image.url;
   // }));
