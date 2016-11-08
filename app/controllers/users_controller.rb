@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
-  # has_secure_password
+  
   def new
+  end
+
+  def show
+    @user = User.find(params[:id])
   end
 
   def create
