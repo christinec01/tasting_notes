@@ -2,11 +2,23 @@
 <br>
 <div class="new-location-form">
 <%= form_tag("/search", method: "get", remote: true) do %>
-  <%= label_tag(:q, "Search for:") %>
+  <%= label_tag(:q, "Growing Region or Country of Origin:") %>
   <%= text_field_tag :q, "", class: 'picture-data' %>
-  <div class="submit-button"><%= submit_tag("Search")%></div>
+<%= submit_tag("Search")%></div>
 <% end %>
-<div class="picture-data"></div>
-<%= render partial: 'image', collection: @images %>
 
+<div class="picture-data">
+<%= render partial: 'image', collection: @images %>
+</div>
+
+<%= form_tag("/new", method: "get", remote: true) do%>
+<%= label_tag(:name, "Name of Coffee") %>
+<%= text_field_tag :name, "" %>
+<br>
+<%= label_tag(:message, "Thoughts about this coffee:") %>
+<%= text_field_tag :message, "" %>
+<br>
+<%= label_tag(:rating, "How would you rate this coffee?") %>
+<%= range_field(:rating, in:(1..5) ) %>
+<%end%>
 </div>
