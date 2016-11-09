@@ -1,7 +1,12 @@
 class NotesController < ApplicationController
   def new
+    p params
     @images = params[:images] || []
-
+    # respond_to do |format|
+    #   format.js {}
+    #   format.html{}
+    #   format.json
+    # end
   end
 
   def entry

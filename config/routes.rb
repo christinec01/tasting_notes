@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-get 'notes/new'
+
 
  get '/search', to: 'notes#entry'
 
