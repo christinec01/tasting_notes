@@ -1,15 +1,20 @@
 Rails.application.routes.draw do
 
 
- get '/search', to: 'notes#entry'
+get '/search', to: 'notes#entry'
+get '/notes/create', to: 'notes#show'
 
 get '/login' => 'sessions#new'
 post '/login' => 'sessions#create'
 get '/logout' => 'sessions#destroy'
 
- get '/signup' => 'users#new'
- post '/users' => 'users#create'
- root 'notes#index'
+get '/signup' => 'users#new'
+post '/users' => 'users#create'
+root 'notes#index'
+
+
+get '/oauth/connect/' => 'oauth#connect'
+get '/oauth/callback/' => 'oauth#callback'
 
 
 resources :users do

@@ -9,18 +9,5 @@
 
 <div class="picture-data">
 <%= render partial: 'image', collection: @images %>
-</div>
-<div id="new-note-form"></div>
-<%= form_tag(new_user_note_path([:user_id]), method: "get", remote: true) do%>
-<%= label_tag(:name, "Name of Coffee") %>
-<%= text_field_tag :name, "" %>
-<br>
-<%= label_tag(:message, "Thoughts about this coffee:") %>
-<%= text_field_tag :message, "" %>
-<br>
-<%= label_tag(:rating, "How would you rate this coffee?") %>
-<%= range_field(:rating, in: 1..5, :step=>1) %>
-<%= submit_tag("Record")%>
-
-<%end%>
+<%= render partial: 'new_entry' %>
 </div>
