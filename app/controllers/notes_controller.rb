@@ -16,35 +16,27 @@ class NotesController < ApplicationController
   end
 
   def create
+    p "*"*80
     @note = Note.new(notes_params)
     @user_id = params[:user_id]
     user = current_user
     if @note.save
       user.notes << @note
+      respond_to do |format|
+        format.js
+      end
     end
   end
 
 
   def entry
-    # p "*" *80
-    p params[:q]
-
     large_array_of_things = Unsplash::Photo.search("#{params[:q]}")
-    # [{bla: ljaksdj, blasg: jasldf, urls: {raw: asdfj, small: THISURLISTHEONEYOUCAREABOUT}, {....}]
-    # [{url: whatever the small url was }, {url: ...}]
-    p ";" *80
-    @images = large_array_of_things.map do |thing|
-      thing["urls"]["small"]
-    end
-    p "0" *80
-    # @images = ImageSearcher.search(query: "#{params[:q]} coffee",count: 2)[0, 3]
-    # p @images
+      @images = large_array_of_things.map do |thing|
+        thing["urls"]["small"]
+      end
     respond_to do |format|
       format.js
     end
-    # byebug
-    # render json: {images: @images}, status: 200
-    # redirect_to notes_new_path(:images => @images)
   end
   private
   def notes_params

@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
 
 get '/search', to: 'notes#entry'
-get '/notes/create', to: 'notes#show'
+
 
 get '/login' => 'sessions#new'
 post '/login' => 'sessions#create'

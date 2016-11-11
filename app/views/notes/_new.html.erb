@@ -1,13 +1,28 @@
-<h1>New Entry</h1>
-<br>
-<div class="new-location-form">
-<%= form_tag("/search", method: "get", remote: true) do %>
-  <%= label_tag(:q, "Growing Region or Country of Origin:") %>
-  <%= text_field_tag :q, "", class: 'picture-data' %>
-<%= submit_tag("Explore")%></div>
-<% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
 
-<div class="picture-data">
-<%= render partial: 'image', collection: @images %>
-<%= render partial: 'new_entry' %>
+      <div class="brand">
+        <div class="container">
+          <h1 class="address-bar">Start Your Tasting Journey</h1>
+            <div class="lead text-xs-center">Welcome back, get ready for your next coffee tasting journey...</div>
+        </div>
+      </div>
+      <div class="new-location-form">
+
+            <div class="card card-block box">
+                <%= form_tag("/search", method: "get", remote: true) do %>
+                  <%= label_tag(:q, "Growing Region or Country of Origin:", class:"col-sm-6") %>
+                  <%= text_field_tag :q, "", class: 'picture-data' %>
+                <%= submit_tag("Explore", class:"btn btn-warning")%>
+              </div>
+                <% end %>
+                <%= render partial: 'new_entry' %>
+            <div class="picture-data">
+            </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
