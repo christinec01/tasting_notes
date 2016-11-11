@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-lg-12">
       <div class="card box">
-      <%= form_tag(new_user_note_path(current_user.id), method: "get", remote: true, class:"list-group list-group-flush") do %>
+      <%= form_tag(user_notes_path(current_user.id), method: "post", remote: true, class:"list-group list-group-flush") do %>
       <div class="form-group row">
         <%= label_tag(:name, "Name of Coffee", class:"col-xs-4 col-form-label") %>
         <div class="col-xs-8">

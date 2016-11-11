@@ -1,11 +1,21 @@
-<h1>Signup!</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
 
-<%= form_for :user, url: '/users' do |f| %>
+      <div class="brand">
+        <div class="container">
+          <h1 class="address-bar">Start Your Tasting Journey</h1>
+            <div class="lead text-xs-center">Welcome, get ready for your next coffee tasting journey...</div>
+        </div>
+      </div>
 
-  Name: <%= f.text_field :name %>
-  Email: <%= f.text_field :email %>
-  Password: <%= f.password_field :password %>
-  Password Confirmation: <%= f.password_field :password_confirmation %>
-  <%= f.submit "Submit" %>
+      <% if current_user %>
+      <%= render "login"%>
+        Signed in as <%= current_user.name %> | <%= link_to "Logout", '/logout', class:"nav-link" %>
+      <% else %>
+        <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup', class:"nav-link" %>
+      <% end %>
 
-<% end %>
+</div>
+</div>
+</div>

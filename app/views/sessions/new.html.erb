@@ -1,8 +1,20 @@
-<h1>Login</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+
+      <div class="brand">
+        <div class="container">
+          <h1 class="address-bar">Start Your Tasting Journey</h1>
+            <div class="lead text-xs-center">Welcome, get ready for your next coffee tasting journey...</div>
+        </div>
+      </div>
 
 <%= form_tag '/login' do %>
-
-  Email: <%= text_field_tag :email %>
-  Password: <%= password_field_tag :password %>
-  <%= submit_tag "Submit" %>
+<br>
+<span class="accent-color">  Email: <%= text_field_tag :email %></span>
+<span class="accent-color">Password: <%= password_field_tag :password %></span>
+<%= submit_tag "Submit", class: "btn btn-warning" %><
 <% end %>
+</div>
+</div>
+</div>

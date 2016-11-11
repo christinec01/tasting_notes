@@ -190,3 +190,11 @@ footer p {
         clear: both;
     }
 }
+
+.submit-button {
+  text-align: center;
+}
+
+.accent-color {
+  color: #FFFFFF;
+}

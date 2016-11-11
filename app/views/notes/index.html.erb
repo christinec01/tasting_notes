@@ -1,4 +1,33 @@
+
 <%if current_user %>
-<!-- <%= link_to 'New Tasting', '/notes/new' %> -->
-<%= render 'new' %>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+
+      <div class="brand">
+        <div class="container">
+          <h1 class="address-bar">Start Your Tasting Journey</h1>
+            <div class="lead text-xs-center">Welcome back, <%=current_user.name%> get ready for your next coffee tasting journey...</div>
+        </div>
+      </div>
+
+<%=link_to "Enter a new tasting", new_user_note_path, class:"btn btn-warning" %>
+  <% current_user.notes.each do |note| %>
+    <div class="card card-block box">
+      <div class="row">
+        <div class="col-lg-12">
+            <hr>
+            <h2 class="intro-text text-center"><%=note.name %>
+            </h2>
+            <hr>
+            <h2 class="intro-text text-center"><p><%=note.message%></p></h2>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  <%else%>
+  <%=redirect_to "users/new"%>
 <% end %>
+</div>
+</div>
+</div>
