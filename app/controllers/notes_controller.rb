@@ -1,6 +1,6 @@
 class NotesController < ApplicationController
 
-  #
+  
   def index
     @notes = current_user.notes
   end
@@ -32,6 +32,7 @@ class NotesController < ApplicationController
       format.js
     end
   end
+
   private
   def notes_params
     params.permit(:name, :message, :rating)
